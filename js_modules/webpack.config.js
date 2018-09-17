@@ -1,4 +1,5 @@
 const path = require('path') // This is common.js
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 console.log('Ashok: 1', path.resolve(__dirname, 'build'));
 
@@ -7,6 +8,7 @@ const config = {
   output: {
     path: path.resolve(__dirname, 'build'),
     filename: 'bundle.js',
+    publicPath: 'build/'
   },
   module: {
     rules: [
@@ -15,6 +17,20 @@ const config = {
         use: [
           { loader: 'babel-loader' },
         ]
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+      },
+      {
+         test: /\.(gif|png|jpe?g|svg)$/i,
+         use: [
+           {
+              loader: 'url-loader',
+              options: { limit: 40000 } //if image of size lessthan 40kb include it in bundle.js
+           },
+           'image-webpack-loader'
+         ]
       }
     ]
   }

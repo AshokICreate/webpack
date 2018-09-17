@@ -1,4 +1,5 @@
 const sum = require('./sum');
+import './image_viewer';
 
 console.log('Ashok: 3 I am inside index.js');
 const total = sum(10, 5);
