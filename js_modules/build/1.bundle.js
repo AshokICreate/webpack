@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[1],[,function(e,n,c){"use strict";Object.defineProperty(n,"__esModule",{value:!0});var t=function(e){return e&&e.__esModule?e:{default:e}}(c(2));n.default=function(){var e=document.createElement("img");e.src=t.default,document.body.appendChild(e)}},function(e,n,c){e.exports=c.p+"71c7c6675db0c1325eb53facc656074d.jpg"}]]);

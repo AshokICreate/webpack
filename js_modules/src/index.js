@@ -1,6 +1,10 @@
-const sum = require('./sum');
-import './image_viewer';
+const button = document.createElement('button');
+button.innerText = 'Click Me';
+button.onclick =  () => {
+  System.import('./image_viewer').then(module =>{
+    console.log(module);
+    module.default();
+  }).catch(error => console.log(error));
+}
 
-console.log('Ashok: 3 I am inside index.js');
-const total = sum(10, 5);
-console.log(`Ashok: 4 total value of 10 + 5 is `, total);
+document.body.appendChild(button);
